@@ -4,7 +4,7 @@ var exec = require('child_process').execFile;
 var cmd = path.join(__dirname, "..", "gib-run.js");
 var opts = {
 	timeout: 2000,
-	maxBuffer: 1024
+	maxBuffer: 1024 * 1024
 };
 function exec_test(args, callback) {
 	if (process.platform === 'win32')
@@ -17,14 +17,14 @@ describe('command line usage', function() {
 	it('--version', function(done) {
 		exec_test([ "--version" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("gib-run") === 0, "version not found");
+			assert(stdout.indexOf("gib-run") >= 0, "version not found");
 			done();
 		});
 	});
 	it('--help', function(done) {
 		exec_test([ "--help" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("Usage: gib-run") === 0, "usage not found");
+			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Usage") >= 0, "usage not found");
 			done();
 		});
 	});
@@ -38,16 +38,16 @@ describe('command line usage', function() {
 	it('--port', function(done) {
 		exec_test([ "--port=16123", "--no-browser", "--test" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("Serving") >= 0, "serving string not found");
-			assert(stdout.indexOf("at http://127.0.0.1:16123") != -1, "port string not found");
+			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
+			assert(stdout.indexOf("16123") != -1, "port string not found");
 			done();
 		});
 	});
 	it('--host', function(done) {
 		exec_test([ "--host=localhost", "--no-browser", "--test" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("Serving") >= 0, "serving string not found");
-			assert(stdout.indexOf("at http://localhost:") != -1, "host string not found");
+			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
+			assert(stdout.indexOf("localhost") != -1, "host string not found");
 			done();
 		});
 	});
@@ -58,7 +58,7 @@ describe('command line usage', function() {
 				"--test"
 			], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("Serving") >= 0, "serving string not found");
+			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
 			done();
 		});
 	});

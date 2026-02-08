@@ -5,7 +5,6 @@ var fs = require('fs'),
 	logger = require('morgan'),
 	WebSocket = require('faye-websocket'),
 	path = require('path'),
-	url = require('url'),
 	http = require('http'),
 	send = require('send'),
 	open = require('open'),
@@ -13,7 +12,6 @@ var fs = require('fs'),
 	compression = require('compression'),
 	os = require('os'),
 	chokidar = require('chokidar'),
-	compression = require('compression'),
 	chalk = require('chalk');
 
 var INJECTED_CODE = fs.readFileSync(path.join(__dirname, "injected.html"), "utf8");
@@ -45,13 +43,13 @@ function staticServer(root) {
 	}
 	return function(req, res, next) {
 		if (req.method !== "GET" && req.method !== "HEAD") return next();
-		var reqpath = isFile ? "" : url.parse(req.url).pathname;
+		var reqpath = isFile ? "" : new URL(req.url, 'http://localhost').pathname;
 		var hasNoOrigin = !req.headers.origin;
 		var injectCandidates = [ new RegExp("</body>", "i"), new RegExp("</svg>"), new RegExp("</head>", "i")];
 		var injectTag = null;
 
 		function directory() {
-			var pathname = url.parse(req.originalUrl).pathname;
+			var pathname = new URL(req.originalUrl, 'http://localhost').pathname;
 			res.statusCode = 301;
 			res.setHeader('Location', pathname + '/');
 			res.end('Redirecting to ' + escape(pathname) + '/');
@@ -218,10 +216,12 @@ GibRun.start = function(options) {
 			realm: "Please authorize",
 			file: htpasswd
 		});
+		// Create middleware wrapper for http-auth v4
 		app.use(function(req, res, next) {
-			basic.check(req, res, function() {
+			var authHandler = basic.check(function() {
 				next();
 			});
+			authHandler(req, res);
 		});
 	}
 	if (cors) {
@@ -239,9 +239,15 @@ GibRun.start = function(options) {
 			console.log('Mapping %s to "%s"', mountRule[0], mountPath);
 	});
 	proxy.forEach(function(proxyRule) {
-		var proxyOpts = url.parse(proxyRule[1]);
-		proxyOpts.via = true;
-		proxyOpts.preserveHost = true;
+		var proxyUrl = new URL(proxyRule[1]);
+		var proxyOpts = {
+			protocol: proxyUrl.protocol,
+			host: proxyUrl.hostname,
+			port: proxyUrl.port,
+			pathname: proxyUrl.pathname,
+			via: true,
+			preserveHost: true
+		};
 		app.use(proxyRule[0], require('proxy-middleware')(proxyOpts));
 		if (GibRun.logLevel >= 1)
 			console.log('Mapping %s to "%s"', proxyRule[0], proxyRule[1]);
@@ -282,7 +288,7 @@ GibRun.start = function(options) {
 		GibRun.server = server;
 
 		var address = server.address();
-		var serveHost = address.address === "0.0.0.0" ? "127.0.0.1" : address.address;
+		var serveHost = address.address === "0.0.0.0" ? "127.0.0.1" : (host === "0.0.0.0" ? address.address : host);
 		var openHost = host === "0.0.0.0" ? "127.0.0.1" : host;
 
 		var serveURL = protocol + '://' + serveHost + ':' + address.port;
