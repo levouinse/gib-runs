@@ -1,5 +1,5 @@
 {
-  "name": "gib-run",
+  "name": "gib-runs",
   "version": "2.0.0",
   "description": "Modern development server with live reload, hot module replacement, and advanced features for all project types - runs on merit, not nepotism",
   "keywords": [
@@ -51,16 +51,16 @@
     "test": "mocha test --exit && npm run lint"
   },
   "bin": {
-    "gib-run": "./gib-run.js"
+    "gib-runs": "gib-run.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/levouinse/gib-run.git"
+    "url": "git+https://github.com/levouinse/gib-runs.git"
   },
   "bugs": {
-    "url": "https://github.com/levouinse/gib-run/issues"
+    "url": "https://github.com/levouinse/gib-runs/issues"
   },
-  "homepage": "https://github.com/levouinse/gib-run#readme",
+  "homepage": "https://github.com/levouinse/gib-runs#readme",
   "engines": {
     "node": ">=16.0.0"
   },

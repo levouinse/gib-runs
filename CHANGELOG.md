@@ -20,7 +20,7 @@ All notable changes to this project will be documented in this file.
 - 📦 Better middleware support
 
 ### Changed
-- Renamed from `live-server` to `gib-run`
+- Renamed from `live-server` to `gib-runs`
 - Updated all dependencies to latest versions
 - Modernized codebase with better error handling
 - Improved logging with icons and colors

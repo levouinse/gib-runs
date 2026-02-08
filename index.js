@@ -16,7 +16,7 @@ var fs = require('fs'),
 
 var INJECTED_CODE = fs.readFileSync(path.join(__dirname, "injected.html"), "utf8");
 
-var GibRun = {
+var GibRuns = {
 	server: null,
 	watcher: null,
 	logLevel: 2,
@@ -68,7 +68,7 @@ function staticServer(root) {
 						break;
 					}
 				}
-				if (injectTag === null && GibRun.logLevel >= 3) {
+				if (injectTag === null && GibRuns.logLevel >= 3) {
 					console.warn(chalk.yellow("⚠ Failed to inject refresh script!"),
 						"Couldn't find any of the tags", injectCandidates, "from", filepath);
 				}
@@ -133,15 +133,15 @@ function entryPoint(staticHandler, file) {
  * @param middleware {array} Append middleware to stack
  * @param compression {boolean} Enable gzip compression (default: true)
  */
-GibRun.start = function(options) {
+GibRuns.start = function(options) {
 	options = options || {};
-	GibRun.startTime = Date.now();
+	GibRuns.startTime = Date.now();
 	var host = options.host || '0.0.0.0';
 	var port = options.port !== undefined ? options.port : 8080; // 0 means random
 	var root = options.root || process.cwd();
 	var mount = options.mount || [];
 	var watchPaths = options.watch || [root];
-	GibRun.logLevel = options.logLevel === undefined ? 2 : options.logLevel;
+	GibRuns.logLevel = options.logLevel === undefined ? 2 : options.logLevel;
 	var openPath = (options.open === undefined || options.open === true) ?
 		"" : ((options.open === null || options.open === false) ? null : options.open);
 	if (options.noBrowser) openPath = null; // Backwards compatibility with 0.7.0
@@ -180,17 +180,17 @@ GibRun.start = function(options) {
 
 	// Request counter middleware
 	app.use(function(req, res, next) {
-		GibRun.requestCount++;
+		GibRuns.requestCount++;
 		next();
 	});
 
 	// Add logger. Level 2 logs only errors
-	if (GibRun.logLevel === 2) {
+	if (GibRuns.logLevel === 2) {
 		app.use(logger('dev', {
 			skip: function (req, res) { return res.statusCode < 400; }
 		}));
 	// Level 2 or above logs all requests
-	} else if (GibRun.logLevel > 2) {
+	} else if (GibRuns.logLevel > 2) {
 		app.use(logger('dev'));
 	}
 	if (options.spa) {
@@ -235,7 +235,7 @@ GibRun.start = function(options) {
 		if (!options.watch) // Auto add mount paths to wathing but only if exclusive path option is not given
 			watchPaths.push(mountPath);
 		app.use(mountRule[0], staticServer(mountPath));
-		if (GibRun.logLevel >= 1)
+		if (GibRuns.logLevel >= 1)
 			console.log('Mapping %s to "%s"', mountRule[0], mountPath);
 	});
 	proxy.forEach(function(proxyRule) {
@@ -249,7 +249,7 @@ GibRun.start = function(options) {
 			preserveHost: true
 		};
 		app.use(proxyRule[0], require('proxy-middleware')(proxyOpts));
-		if (GibRun.logLevel >= 1)
+		if (GibRuns.logLevel >= 1)
 			console.log('Mapping %s to "%s"', proxyRule[0], proxyRule[1]);
 	});
 	app.use(staticServerHandler) // Custom static server
@@ -279,13 +279,13 @@ GibRun.start = function(options) {
 			}, 1000);
 		} else {
 			console.error(chalk.red("✖ Error: " + e.toString()));
-			GibRun.shutdown();
+			GibRuns.shutdown();
 		}
 	});
 
 	// Handle successful server
 	server.addListener('listening', function(/*e*/) {
-		GibRun.server = server;
+		GibRuns.server = server;
 
 		var address = server.address();
 		var serveHost = address.address === "0.0.0.0" ? "127.0.0.1" : (host === "0.0.0.0" ? address.address : host);
@@ -295,7 +295,7 @@ GibRun.start = function(options) {
 		var openURL = protocol + '://' + openHost + ':' + address.port;
 
 		var serveURLs = [ serveURL ];
-		if (GibRun.logLevel > 2 && address.address === "0.0.0.0") {
+		if (GibRuns.logLevel > 2 && address.address === "0.0.0.0") {
 			var ifaces = os.networkInterfaces();
 			serveURLs = Object.keys(ifaces)
 				.map(function(iface) {
@@ -316,14 +316,14 @@ GibRun.start = function(options) {
 		}
 
 		// Output with beautiful formatting
-		if (GibRun.logLevel >= 1) {
+		if (GibRuns.logLevel >= 1) {
 			console.log('\\n' + chalk.cyan.bold('━'.repeat(60)));
-			console.log(chalk.cyan.bold('  🚀 GIB-RUN') + chalk.gray(' v2.0.0'));
+			console.log(chalk.cyan.bold('  🚀 GIB-RUNS') + chalk.gray(' v2.0.0'));
 			console.log(chalk.cyan.bold('━'.repeat(60)));
 			console.log(chalk.white('  📁 Root:       ') + chalk.yellow(root));
 			console.log(chalk.white('  🌐 Local:      ') + chalk.green(serveURL));
 			
-			if (GibRun.logLevel > 2 && serveURLs.length > 1) {
+			if (GibRuns.logLevel > 2 && serveURLs.length > 1) {
 				console.log(chalk.white('  🔗 Network:'));
 				serveURLs.forEach(function(urlItem) {
 					if (urlItem !== serveURL) {
@@ -401,17 +401,17 @@ GibRun.start = function(options) {
 		ignored.push(options.ignorePattern);
 	}
 	// Setup file watcher
-	GibRun.watcher = chokidar.watch(watchPaths, {
+	GibRuns.watcher = chokidar.watch(watchPaths, {
 		ignored: ignored,
 		ignoreInitial: true
 	});
 	function handleChange(changePath) {
-		GibRun.reloadCount++;
+		GibRuns.reloadCount++;
 		var cssChange = path.extname(changePath) === ".css" && !noCssInject;
 		var relPath = path.relative(root, changePath);
 		var timestamp = new Date().toLocaleTimeString();
 		
-		if (GibRun.logLevel >= 1) {
+		if (GibRuns.logLevel >= 1) {
 			if (cssChange) {
 				console.log(chalk.magenta('  ⚡ [' + timestamp + '] CSS updated: ') + chalk.gray(relPath));
 			} else {
@@ -423,14 +423,14 @@ GibRun.start = function(options) {
 				ws.send(cssChange ? 'refreshcss' : 'reload');
 		});
 	}
-	GibRun.watcher
+	GibRuns.watcher
 		.on("change", handleChange)
 		.on("add", handleChange)
 		.on("unlink", handleChange)
 		.on("addDir", handleChange)
 		.on("unlinkDir", handleChange)
 		.on("ready", function () {
-			if (GibRun.logLevel >= 1)
+			if (GibRuns.logLevel >= 1)
 				console.log(chalk.cyan("  ✓ Watching for file changes...\\n"));
 		})
 		.on("error", function (err) {
@@ -440,25 +440,25 @@ GibRun.start = function(options) {
 	return server;
 };
 
-GibRun.shutdown = function() {
-	if (GibRun.logLevel >= 1 && GibRun.startTime) {
-		var uptime = ((Date.now() - GibRun.startTime) / 1000).toFixed(2);
+GibRuns.shutdown = function() {
+	if (GibRuns.logLevel >= 1 && GibRuns.startTime) {
+		var uptime = ((Date.now() - GibRuns.startTime) / 1000).toFixed(2);
 		console.log('\\n' + chalk.cyan.bold('━'.repeat(60)));
-		console.log(chalk.yellow('  👋 Shutting down GIB-RUN...'));
+		console.log(chalk.yellow('  👋 Shutting down GIB-RUNS...'));
 		console.log(chalk.gray('  📊 Statistics:'));
 		console.log(chalk.gray('     • Uptime: ') + chalk.white(uptime + 's'));
-		console.log(chalk.gray('     • Requests: ') + chalk.white(GibRun.requestCount));
-		console.log(chalk.gray('     • Reloads: ') + chalk.white(GibRun.reloadCount));
+		console.log(chalk.gray('     • Requests: ') + chalk.white(GibRuns.requestCount));
+		console.log(chalk.gray('     • Reloads: ') + chalk.white(GibRuns.reloadCount));
 		console.log(chalk.cyan.bold('━'.repeat(60)) + '\\n');
 	}
 	
-	var watcher = GibRun.watcher;
+	var watcher = GibRuns.watcher;
 	if (watcher) {
 		watcher.close();
 	}
-	var server = GibRun.server;
+	var server = GibRuns.server;
 	if (server)
 		server.close();
 };
 
-module.exports = GibRun;
+module.exports = GibRuns;

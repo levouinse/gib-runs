@@ -1,16 +1,16 @@
-<!-- Code injected by gib-run -->
+<!-- Code injected by gib-runs -->
 <script type="text/javascript">
 	// <![CDATA[  <-- For SVG support
 	// Live reload enabled
 	if ('WebSocket' in window) {
 		(function() {
-			var gibRunConnected = false;
+			var gibRunsConnected = false;
 			var reconnectAttempts = 0;
 			var maxReconnectAttempts = 10;
 			
 			// Inject status indicator
 			var statusDiv = document.createElement('div');
-			statusDiv.id = 'gib-run-status';
+			statusDiv.id = 'gib-runs-status';
 			statusDiv.style.cssText = 'position:fixed;bottom:20px;right:20px;padding:10px 15px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;border-radius:8px;font-family:system-ui,-apple-system,sans-serif;font-size:12px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:999999;display:flex;align-items:center;gap:8px;transition:all 0.3s ease;opacity:0;transform:translateY(10px)';
 			
 			var statusIcon = document.createElement('span');
@@ -31,7 +31,7 @@
 			function updateStatus(status, color) {
 				statusIcon.style.color = color;
 				statusText.textContent = status;
-				if (!gibRunConnected && status === 'Live Reload Active') {
+				if (!gibRunsConnected && status === 'Live Reload Active') {
 					statusDiv.style.animation = 'slideIn 0.3s ease forwards';
 					setTimeout(function() {
 						statusDiv.style.opacity = '0.7';
@@ -64,10 +64,10 @@
 				var socket = new WebSocket(address);
 				
 				socket.onopen = function() {
-					gibRunConnected = true;
+					gibRunsConnected = true;
 					reconnectAttempts = 0;
 					updateStatus('Live Reload Active', '#4ade80');
-					console.log('%c🚀 GIB-RUN %cLive reload connected', 'color:#667eea;font-weight:bold;font-size:14px', 'color:#666;font-size:12px');
+					console.log('%c🚀 GIB-RUNS %cLive reload connected', 'color:#667eea;font-weight:bold;font-size:14px', 'color:#666;font-size:12px');
 				};
 				
 				socket.onmessage = function(msg) {
@@ -83,7 +83,7 @@
 				};
 				
 				socket.onclose = function() {
-					gibRunConnected = false;
+					gibRunsConnected = false;
 					if (reconnectAttempts < maxReconnectAttempts) {
 						reconnectAttempts++;
 						updateStatus('Reconnecting...', '#fbbf24');

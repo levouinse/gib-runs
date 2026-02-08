@@ -1,16 +1,16 @@
-[![npm version](https://img.shields.io/npm/v/gib-run.svg)](https://www.npmjs.org/package/gib-run)
-[![npm downloads](https://img.shields.io/npm/dm/gib-run.svg)](https://www.npmjs.org/package/gib-run)
-[![license](https://img.shields.io/npm/l/gib-run.svg)](https://github.com/levouinse/gib-run/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/gib-runs.svg)](https://www.npmjs.org/package/gib-runs)
+[![npm downloads](https://img.shields.io/npm/dm/gib-runs.svg)](https://www.npmjs.org/package/gib-runs)
+[![license](https://img.shields.io/npm/l/gib-runs.svg)](https://github.com/levouinse/gib-runs/blob/main/LICENSE)
 
-# 🚀 GIB-RUN
+# 🚀 GIB-RUNS
 
 **Modern development server with live reload - Unlike some people, this actually runs on merit, not connections.**
 
-> *"GIB-RUN: Because your development server shouldn't need a family dynasty to work properly."*
+> *"GIB-RUNS: Because your development server shouldn't need a family dynasty to work properly."*
 
 Inspired by the need for something that actually **runs** based on capability, not nepotism. This development server proves that with the right features and hard work, you don't need a famous last name to be successful.
 
-## 🎭 Why "GIB-RUN"?
+## 🎭 Why "GIB-RUNS"?
 
 The name is a playful nod to someone who got a head start in life. But unlike certain political figures, this server:
 - ✅ Actually earned its position through features
@@ -50,18 +50,18 @@ The name is a playful nod to someone who got a head start in life. But unlike ce
 
 ### Global Installation (Recommended)
 ```bash
-npm install -g gib-run
+npm install -g gib-runs
 ```
 
 ### Local Installation
 ```bash
-npm install --save-dev gib-run
+npm install --save-dev gib-runs
 ```
 
 ### From Source
 ```bash
-git clone https://github.com/levouinse/gib-run.git
-cd gib-run
+git clone https://github.com/levouinse/gib-runs.git
+cd gib-runs
 npm install
 npm install -g
 ```
@@ -71,7 +71,7 @@ npm install -g
 Navigate to your project directory and run:
 
 ```bash
-gib-run
+gib-runs
 ```
 
 That's it! Your project is now being served with live reload enabled.
@@ -82,25 +82,25 @@ That's it! Your project is now being served with live reload enabled.
 
 ```bash
 # Serve current directory on default port (8080)
-gib-run
+gib-runs
 
 # Serve specific directory
-gib-run ./dist
+gib-runs ./dist
 
 # Custom port
-gib-run --port=3000
+gib-runs --port=3000
 
 # Open specific path in browser
-gib-run --open=/dashboard
+gib-runs --open=/dashboard
 
 # SPA mode with custom port
-gib-run --spa --port=8000
+gib-runs --spa --port=8000
 
 # HTTPS with custom config
-gib-run --https=./config/https.conf.js
+gib-runs --https=./config/https.conf.js
 
 # Multiple options
-gib-run dist --port=3000 --spa --cors --no-browser
+gib-runs dist --port=3000 --spa --cors --no-browser
 ```
 
 ### CLI Options
@@ -134,7 +134,7 @@ gib-run dist --port=3000 --spa --cors --no-browser
 ### Node.js API
 
 ```javascript
-const gibRun = require('gib-run');
+const gibRun = require('gib-runs');
 
 const server = gibRun.start({
   port: 8080,
@@ -182,7 +182,7 @@ const server = gibRun.start({
 
 ### Configuration File
 
-Create `~/.gib-run.json` for default settings:
+Create `~/.gib-runs.json` for default settings:
 
 ```json
 {
@@ -212,7 +212,7 @@ module.exports = {
 
 Then run:
 ```bash
-gib-run --https=./https.conf.js
+gib-runs --https=./https.conf.js
 ```
 
 ### HTTP/2 Support
@@ -221,7 +221,7 @@ Install a custom HTTPS module like `spdy`:
 
 ```bash
 npm install spdy
-gib-run --https=./https.conf.js --https-module=spdy
+gib-runs --https=./https.conf.js --https-module=spdy
 ```
 
 ## 🎯 Single Page Applications
@@ -230,10 +230,10 @@ For SPAs (React, Vue, Angular, etc.):
 
 ```bash
 # Redirect all routes to index.html
-gib-run --spa
+gib-runs --spa
 
 # Or with entry file
-gib-run --entry-file=index.html
+gib-runs --entry-file=index.html
 ```
 
 ### SPA Middleware Options
@@ -246,12 +246,12 @@ gib-run --entry-file=index.html
 Proxy API requests during development:
 
 ```bash
-gib-run --proxy=/api:http://localhost:3000
+gib-runs --proxy=/api:http://localhost:3000
 ```
 
 Multiple proxies:
 ```bash
-gib-run --proxy=/api:http://localhost:3000 --proxy=/auth:http://localhost:4000
+gib-runs --proxy=/api:http://localhost:3000 --proxy=/auth:http://localhost:4000
 ```
 
 ## 🎨 Custom Middleware
@@ -268,12 +268,12 @@ module.exports = function(req, res, next) {
 
 Use it:
 ```bash
-gib-run --middleware=./middleware/custom.js
+gib-runs --middleware=./middleware/custom.js
 ```
 
 ## 📊 Status Indicator
 
-GIB-RUN includes a beautiful status indicator that appears in the bottom-right corner of your page:
+GIB-RUNS includes a beautiful status indicator that appears in the bottom-right corner of your page:
 
 - 🟢 **Green** - Live reload active
 - 🟡 **Yellow** - Reconnecting/Reloading
@@ -290,7 +290,7 @@ The indicator shows:
 Serve multiple directories:
 
 ```bash
-gib-run --mount=/components:./node_modules --mount=/static:./assets
+gib-runs --mount=/components:./node_modules --mount=/static:./assets
 ```
 
 Access them at:
@@ -306,7 +306,7 @@ Protect your development server:
 htpasswd -c .htpasswd username
 
 # Use it
-gib-run --htpasswd=.htpasswd
+gib-runs --htpasswd=.htpasswd
 ```
 
 ## 🌐 Network Access
@@ -314,12 +314,12 @@ gib-run --htpasswd=.htpasswd
 Access your server from other devices:
 
 ```bash
-gib-run --verbose
+gib-runs --verbose
 ```
 
 This will show all network interfaces:
 ```
-🚀 GIB-RUN v2.0.0
+🚀 GIB-RUNS v2.0.0
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   📁 Root:       /home/user/project
   🌐 Local:      http://127.0.0.1:8080
@@ -335,13 +335,13 @@ This will show all network interfaces:
 
 ### No reload on changes
 1. Check browser console for WebSocket connection
-2. Ensure files are being watched: `gib-run --verbose`
-3. Try increasing wait time: `gib-run --wait=500`
+2. Ensure files are being watched: `gib-runs --verbose`
+3. Try increasing wait time: `gib-runs --wait=500`
 
 ### Port already in use
-GIB-RUN will automatically try another port. Or specify one:
+GIB-RUNS will automatically try another port. Or specify one:
 ```bash
-gib-run --port=3000
+gib-runs --port=3000
 ```
 
 ### ENOSPC error (Linux)
@@ -354,7 +354,7 @@ sudo sysctl -p
 ### Changes missing or outdated
 Increase debounce time:
 ```bash
-gib-run --wait=500
+gib-runs --wait=500
 ```
 
 ## 🎯 Use Cases
@@ -362,34 +362,34 @@ gib-run --wait=500
 ### React Development
 ```bash
 cd my-react-app
-gib-run build --spa --port=3000
+gib-runs build --spa --port=3000
 ```
 
 ### Vue.js Development
 ```bash
 cd my-vue-app
-gib-run dist --spa --cors
+gib-runs dist --spa --cors
 ```
 
 ### Static Website
 ```bash
 cd my-website
-gib-run --open=/index.html
+gib-runs --open=/index.html
 ```
 
 ### API Development with Proxy
 ```bash
-gib-run public --proxy=/api:http://localhost:3000
+gib-runs public --proxy=/api:http://localhost:3000
 ```
 
 ### Multi-Project Setup
 ```bash
-gib-run --mount=/app1:./project1/dist --mount=/app2:./project2/dist
+gib-runs --mount=/app1:./project1/dist --mount=/app2:./project2/dist
 ```
 
 ## 📈 Performance
 
-GIB-RUN includes several performance optimizations (all achieved through actual work, not family connections):
+GIB-RUNS includes several performance optimizations (all achieved through actual work, not family connections):
 
 - **Gzip Compression** - Reduces transfer size by up to 70% (real optimization, not just claims)
 - **Smart Caching** - Efficient file serving with proper cache headers
@@ -417,7 +417,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 **sofinco**
 - GitHub: [@levouinse](https://github.com/levouinse)
-- Repository: [gib-run](https://github.com/levouinse/gib-run)
+- Repository: [gib-runs](https://github.com/levouinse/gib-runs)
 
 ## 🙏 Acknowledgments
 
@@ -431,10 +431,10 @@ Built with inspiration from live-server and enhanced with modern features for to
 
 ## 🔗 Links
 
-- [npm package](https://www.npmjs.com/package/gib-run)
-- [GitHub repository](https://github.com/levouinse/gib-run)
-- [Issue tracker](https://github.com/levouinse/gib-run/issues)
-- [Changelog](https://github.com/levouinse/gib-run/releases)
+- [npm package](https://www.npmjs.com/package/gib-runs)
+- [GitHub repository](https://github.com/levouinse/gib-runs)
+- [Issue tracker](https://github.com/levouinse/gib-runs/issues)
+- [Changelog](https://github.com/levouinse/gib-runs/releases)
 
 ---
 

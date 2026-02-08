@@ -17,14 +17,14 @@ describe('command line usage', function() {
 	it('--version', function(done) {
 		exec_test([ "--version" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("gib-run") >= 0, "version not found");
+			assert(stdout.indexOf("gib-runs") >= 0, "version not found");
 			done();
 		});
 	});
 	it('--help', function(done) {
 		exec_test([ "--help" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Usage") >= 0, "usage not found");
+			assert(stdout.indexOf("GIB-RUNS") >= 0 || stdout.indexOf("Usage") >= 0, "usage not found");
 			done();
 		});
 	});
@@ -38,7 +38,7 @@ describe('command line usage', function() {
 	it('--port', function(done) {
 		exec_test([ "--port=16123", "--no-browser", "--test" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
+			assert(stdout.indexOf("GIB-RUNS") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
 			assert(stdout.indexOf("16123") != -1, "port string not found");
 			done();
 		});
@@ -46,7 +46,7 @@ describe('command line usage', function() {
 	it('--host', function(done) {
 		exec_test([ "--host=localhost", "--no-browser", "--test" ], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
+			assert(stdout.indexOf("GIB-RUNS") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
 			assert(stdout.indexOf("localhost") != -1, "host string not found");
 			done();
 		});
@@ -58,7 +58,7 @@ describe('command line usage', function() {
 				"--test"
 			], function(error, stdout, stdin) {
 			assert(!error, error);
-			assert(stdout.indexOf("GIB-RUN") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
+			assert(stdout.indexOf("GIB-RUNS") >= 0 || stdout.indexOf("Local") >= 0, "server string not found");
 			done();
 		});
 	});

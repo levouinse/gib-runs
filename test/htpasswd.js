@@ -1,6 +1,6 @@
 var request = require('supertest');
 var path = require('path');
-var gibRun = require('..').start({
+var gibRuns = require('..').start({
 	root: path.join(__dirname, "data"),
 	port: 0,
 	open: false,
@@ -9,18 +9,18 @@ var gibRun = require('..').start({
 
 describe('htpasswd tests', function() {
 	it('should respond with 401 since no password is given', function(done) {
-		request(gibRun)
+		request(gibRuns)
 			.get('/')
 			.expect(401, done);
 	});
 	it('should respond with 401 since wrong password is given', function(done) {
-		request(gibRun)
+		request(gibRuns)
 			.get('/')
 			.auth("test", "not-real-password")
 			.expect(401, done);
 	});
 	it('should respond with 200 since correct password is given', function(done) {
-		request(gibRun)
+		request(gibRuns)
 			.get('/')
 			.auth("test", "test")
 			.expect(200, done);

@@ -1,12 +1,12 @@
 var request = require('supertest');
 var path = require('path');
-var gibRunSpa = require('..').start({
+var gibRunsSpa = require('..').start({
 	root: path.join(__dirname, "data"),
 	port: 0,
 	open: false,
 	middleware: [ "spa" ]
 });
-var gibRunSpaIgnoreAssets = require('..').start({
+var gibRunsSpaIgnoreAssets = require('..').start({
 	root: path.join(__dirname, "data"),
 	port: 0,
 	open: false,
@@ -15,25 +15,25 @@ var gibRunSpaIgnoreAssets = require('..').start({
 
 describe('spa tests', function(){
 	it('spa should redirect', function(done){
-		request(gibRunSpa)
+		request(gibRunsSpa)
 			.get('/api')
 			.expect('Location', /\/#\//)
 			.expect(302, done);
 	});
 	it('spa should redirect everything', function(done){
-		request(gibRunSpa)
+		request(gibRunsSpa)
 			.get('/style.css')
 			.expect('Location', /\/#\//)
 			.expect(302, done);
 	});
 	it('spa-ignore-assets should redirect something', function(done){
-		request(gibRunSpaIgnoreAssets)
+		request(gibRunsSpaIgnoreAssets)
 			.get('/api')
 			.expect('Location', /\/#\//)
 			.expect(302, done);
 	});
 	it('spa-ignore-assets should not redirect .css', function(done){
-		request(gibRunSpaIgnoreAssets)
+		request(gibRunsSpaIgnoreAssets)
 			.get('/style.css')
 			.expect(200, done);
 	});

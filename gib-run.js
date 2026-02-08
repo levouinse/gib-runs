@@ -3,7 +3,7 @@ var path = require('path');
 var fs = require('fs');
 var assign = require('object-assign');
 var chalk = require('chalk');
-var gibRun = require("./index");
+var gibRuns = require("./index");
 
 var opts = {
 	host: process.env.IP,
@@ -16,7 +16,7 @@ var opts = {
 };
 
 var homeDir = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'];
-var configPath = path.join(homeDir, '.gib-run.json');
+var configPath = path.join(homeDir, '.gib-runs.json');
 if (fs.existsSync(configPath)) {
 	var userConfig = fs.readFileSync(configPath, 'utf8');
 	assign(opts, JSON.parse(userConfig));
@@ -151,8 +151,8 @@ for (var i = process.argv.length - 1; i >= 2; --i) {
 		process.argv.splice(i, 1);
 	}
 	else if (arg === "--help" || arg === "-h") {
-		console.log(chalk.cyan.bold('\n  🚀 GIB-RUN') + chalk.gray(' - Modern Development Server\n'));
-		console.log(chalk.white('  Usage: ') + chalk.yellow('gib-run') + chalk.gray(' [options] [path]\n'));
+		console.log(chalk.cyan.bold('\n  🚀 GIB-RUNS') + chalk.gray(' - Modern Development Server\n'));
+		console.log(chalk.white('  Usage: ') + chalk.yellow('gib-runs') + chalk.gray(' [options] [path]\n'));
 		console.log(chalk.white('  Options:\n'));
 		console.log(chalk.yellow('    -v, --version          ') + chalk.gray('Display version'));
 		console.log(chalk.yellow('    -h, --help             ') + chalk.gray('Show this help'));
@@ -177,14 +177,14 @@ for (var i = process.argv.length - 1; i >= 2; --i) {
 		console.log(chalk.yellow('    --proxy=ROUTE:URL      ') + chalk.gray('Proxy requests'));
 		console.log(chalk.yellow('    --middleware=PATH      ') + chalk.gray('Add middleware\n'));
 		console.log(chalk.gray('  Examples:\n'));
-		console.log(chalk.gray('    gib-run'));
-		console.log(chalk.gray('    gib-run --port=3000 --open=/index.html'));
-		console.log(chalk.gray('    gib-run dist --spa --no-browser\n'));
+		console.log(chalk.gray('    gib-runs'));
+		console.log(chalk.gray('    gib-runs --port=3000 --open=/index.html'));
+		console.log(chalk.gray('    gib-runs dist --spa --no-browser\n'));
 		process.exit();
 	}
 	else if (arg === "--test") {
 		// Hidden param for tests to exit automatically
-		setTimeout(gibRun.shutdown, 500);
+		setTimeout(gibRuns.shutdown, 500);
 		process.argv.splice(i, 1);
 	}
 }
@@ -203,4 +203,4 @@ if (opts.ignore) {
 	});
 }
 
-gibRun.start(opts);
+gibRuns.start(opts);

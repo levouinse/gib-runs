@@ -1,6 +1,6 @@
 var request = require('supertest');
 var path = require('path');
-var gibRun1 = require('..').start({
+var gibRuns1 = require('..').start({
 	root: path.join(__dirname, 'data'),
 	port: 0,
 	open: false,
@@ -11,13 +11,13 @@ var gibRun1 = require('..').start({
 		}
 	]
 });
-var gibRun2 = require('..').start({
+var gibRuns2 = require('..').start({
 	root: path.join(__dirname, 'data'),
 	port: 0,
 	open: false,
 	middleware: [ "example" ]
 });
-var gibRun3 = require('..').start({
+var gibRuns3 = require('..').start({
 	root: path.join(__dirname, 'data'),
 	port: 0,
 	open: false,
@@ -26,17 +26,17 @@ var gibRun3 = require('..').start({
 
 describe('middleware tests', function() {
 	it("should respond with middleware function's status code", function(done) {
-		request(gibRun1)
+		request(gibRuns1)
 			.get('/')
 			.expect(201, done);
 	});
 	it("should respond with built-in middleware's status code", function(done) {
-		request(gibRun2)
+		request(gibRuns2)
 			.get('/')
 			.expect(202, done);
 	});
 	it("should respond with external middleware's status code", function(done) {
-		request(gibRun3)
+		request(gibRuns3)
 			.get('/')
 			.expect(203, done);
 	});
