@@ -3,15 +3,17 @@ var path = require('path');
 var port = 40200;
 var server1 = require('..').start({
 	root: path.join(__dirname, "data"),
+	host: '127.0.0.1',
 	port: port,
 	open: false
 });
 var server2 = require('..').start({
 	root: path.join(__dirname, "data"),
+	host: '127.0.0.1',
 	port: 0,
 	open: false,
 	proxy: [
-		["/server1", "http://localhost:" + port]
+		["/server1", "http://127.0.0.1:" + port]
 	]
 });
 
