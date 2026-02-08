@@ -169,6 +169,7 @@ GibRuns.start = function(options) {
 	var npmScript = options.npmScript || null;
 	var usePM2 = options.pm2 || false;
 	var pm2Name = options.pm2Name || 'gib-runs-app';
+	var testMode = options.test || false;
 
 	if (httpsModule) {
 		try {
@@ -442,6 +443,11 @@ GibRuns.start = function(options) {
 			} else {
 				open(openURL + openPath, {app: browser});
 			}
+		
+		// Auto shutdown for tests
+		if (testMode) {
+			setTimeout(GibRuns.shutdown, 500);
+		}
 	});
 
 	// Setup server to listen at port

@@ -259,7 +259,7 @@ for (var i = process.argv.length - 1; i >= 2; --i) {
 	}
 	else if (arg === "--test") {
 		// Hidden param for tests to exit automatically
-		setTimeout(gibRuns.shutdown, 500);
+		opts.test = true;
 		process.argv.splice(i, 1);
 	}
 }
