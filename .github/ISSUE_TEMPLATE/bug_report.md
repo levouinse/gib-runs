@@ -27,7 +27,7 @@ assignees: ''
 <!-- What actually happened -->
 
 ## Environment
-- GIB-RUN Version: 
+- GIB-RUNS Version: 
 - Node.js Version: 
 - Operating System: 
 - Browser (if applicable): 
@@ -41,4 +41,4 @@ assignees: ''
 
 ---
 
-Before submitting, please check the [Troubleshooting](https://github.com/levouinse/gib-run#troubleshooting) section in the README.
+Before submitting, please check the [Troubleshooting](https://github.com/levouinse/gib-runs#troubleshooting) section in the README.
