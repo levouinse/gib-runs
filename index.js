@@ -578,7 +578,7 @@ GibRuns.start = function(options) {
 		.on("unlinkDir", handleChange)
 		.on("ready", function () {
 			if (GibRuns.logLevel >= 1)
-				console.log(chalk.cyan("  ✓ Watching for file changes...\\n"));
+				console.log(chalk.cyan("  ✓ Watching for file changes...\n"));
 		})
 		.on("error", function (err) {
 			console.log(chalk.red("  ✖ Watcher Error: ") + err);
@@ -590,13 +590,13 @@ GibRuns.start = function(options) {
 GibRuns.shutdown = function() {
 	if (GibRuns.logLevel >= 1 && GibRuns.startTime) {
 		var uptime = ((Date.now() - GibRuns.startTime) / 1000).toFixed(2);
-		console.log('\\n' + chalk.cyan.bold('━'.repeat(60)));
+		console.log('\n' + chalk.cyan.bold('━'.repeat(60)));
 		console.log(chalk.yellow('  👋 Shutting down GIB-RUNS...'));
 		console.log(chalk.gray('  📊 Statistics:'));
 		console.log(chalk.gray('     • Uptime: ') + chalk.white(uptime + 's'));
 		console.log(chalk.gray('     • Requests: ') + chalk.white(GibRuns.requestCount));
 		console.log(chalk.gray('     • Reloads: ') + chalk.white(GibRuns.reloadCount));
-		console.log(chalk.cyan.bold('━'.repeat(60)) + '\\n');
+		console.log(chalk.cyan.bold('━'.repeat(60)) + '\n');
 	}
 	
 	// Stop process runner if active
