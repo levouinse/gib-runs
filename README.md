@@ -372,7 +372,7 @@ gib-runs
 Network URLs are **ALWAYS shown automatically** when you start the server:
 
 ```
-🚀 GIB-RUNS v2.3.0
+🚀 GIB-RUNS v2.3.2
 "Unlike Gibran, this actually works through merit"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   📁 Root:       /home/user/project
@@ -491,7 +491,7 @@ gib-runs --tunnel-service=tunnelto
 ### Example Output
 
 ```
-🚀 GIB-RUNS v2.3.0
+🚀 GIB-RUNS v2.3.2
 "Unlike Gibran, this actually works through merit"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   📁 Root:       /home/user/project
@@ -621,7 +621,7 @@ pm2 list
 ### Example Output
 
 ```
-🚀 GIB-RUNS v2.3.0
+🚀 GIB-RUNS v2.3.2
 "Unlike Gibran, this actually works through merit"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   📁 Root:       /home/user/project
