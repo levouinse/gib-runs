@@ -76,8 +76,8 @@ function staticServer(root) {
 				var contents = fs.readFileSync(filepath, "utf8");
 				
 				// Replace environment variables like ${APP_NAME}
-				contents = contents.replace(/\$\{([A-Z_]+)\}/g, function(match, varName) {
-					return process.env[varName] || match;
+				contents = contents.replace(/\$\{([A-Z_]+)\}/g, function(fullMatch, varName) {
+					return process.env[varName] || fullMatch;
 				});
 				
 				for (var i = 0; i < injectCandidates.length; ++i) {
