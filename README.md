@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/npm/l/gib-runs.svg)](https://github.com/levouinse/gib-runs/blob/main/LICENSE)
 [![tests](https://img.shields.io/badge/tests-32%20passing-brightgreen.svg)](https://github.com/levouinse/gib-runs)
 
-# 🚀 GIB-RUNS v2.3.4
+# 🚀 GIB-RUNS v2.3.5
 
 **Modern development server with live reload - Unlike some people, this actually runs on merit, not connections.**
 
@@ -61,7 +61,10 @@ The name is a playful nod to Indonesia's Vice President Gibran Rakabuming Raka, 
 - 🚦 **Rate Limiting** - Protect against abuse (better protection than family connections)
 - 🌐 **Network Access** - True network binding that actually works (unlike some political promises)
 
-### New in v2.3.4 🎉
+### New in v2.3.5 🎉
+- 🔄 **Environment Variable Replacement** - Automatic replacement of `${VAR_NAME}` in HTML files from .env
+
+### New in v2.3.5 🎉
 - 🔁 **Auto-Restart on Crash** - Automatically restart server on unexpected errors (resilient mode)
 - 📤 **File Upload Endpoint** - Built-in file upload support for development (POST to /upload)
 - 💚 **Health Check Endpoint** - Monitor server health and statistics (GET /health)
@@ -386,7 +389,7 @@ gib-runs
 Network URLs are **ALWAYS shown automatically** when you start the server:
 
 ```
-🚀 GIB-RUNS v2.3.4
+🚀 GIB-RUNS v2.3.5
 "Unlike Gibran, this actually works through merit"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   📁 Root:       /home/user/project
@@ -505,7 +508,7 @@ gib-runs --tunnel-service=tunnelto
 ### Example Output
 
 ```
-🚀 GIB-RUNS v2.3.4
+🚀 GIB-RUNS v2.3.5
 "Unlike Gibran, this actually works through merit"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   📁 Root:       /home/user/project
@@ -635,7 +638,7 @@ pm2 list
 ### Example Output
 
 ```
-🚀 GIB-RUNS v2.3.4
+🚀 GIB-RUNS v2.3.5
 "Unlike Gibran, this actually works through merit"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   📁 Root:       /home/user/project
@@ -662,7 +665,7 @@ pm2 list
 
 **Unlike Gibran's career, these processes run on actual merit and capability!** 🔥
 
-## 🆕 New Features in v2.3.4
+## 🆕 New Features in v2.3.5
 
 ### Auto-Restart on Crash
 

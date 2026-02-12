@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.5] - 2026-02-12
+
+### Added
+- 🔄 **Environment Variable Replacement** - Automatic replacement of `${VAR_NAME}` patterns in HTML files
+  - Reads from `.env` file automatically
+  - Works with all environment variables (APP_NAME, API_KEY, etc)
+  - No configuration needed
+
 ## [2.3.4] - 2026-02-12
 
 ### Added - New Features 🎉
