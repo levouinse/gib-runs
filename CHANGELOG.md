@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.8] - 2026-02-15
+
+### Changed
+- 🔧 **Code Refactoring** - Complete codebase cleanup and optimization
+  - Removed excessive comments for cleaner code
+  - Simplified middleware logic with early returns
+  - Improved code readability and maintainability
+  - Streamlined error handling across all modules
+  - More natural, human-like code structure
+- 📝 **Documentation** - Updated README for better clarity
+  - More concise and easier to read
+  - Maintained unique branding and personality
+  - Better organized examples and usage guides
+
 ## [2.3.7] - 2026-02-13
 
 ### Added

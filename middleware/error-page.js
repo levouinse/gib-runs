@@ -1,10 +1,7 @@
-// Custom error pages
-// Unlike Gibran's political errors, these are properly documented and handled
 const fs = require('fs');
 const path = require('path');
 
-const errorTemplate = `
-<!DOCTYPE html>
+const errorTemplate = `<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -13,7 +10,7 @@ const errorTemplate = `
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
 		body {
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 			min-height: 100vh;
 			display: flex;
@@ -76,9 +73,7 @@ const errorTemplate = `
 			font-weight: 600;
 			transition: transform 0.2s;
 		}
-		.back-button:hover {
-			transform: translateY(-2px);
-		}
+		.back-button:hover { transform: translateY(-2px); }
 		.footer {
 			margin-top: 30px;
 			font-size: 14px;
@@ -99,8 +94,7 @@ const errorTemplate = `
 		</div>
 	</div>
 </body>
-</html>
-`;
+</html>`;
 
 const errorMessages = {
 	400: { message: 'Bad Request', description: 'The request could not be understood by the server.' },
@@ -128,15 +122,8 @@ module.exports = function(options) {
 			.replace(/{{message}}/g, errorInfo.message)
 			.replace(/{{description}}/g, errorInfo.description);
 		
-		// Add error details in development
 		if (showStack && err.stack) {
-			const details = `
-				<div class="error-details">
-					<strong>Error Details:</strong>
-					<pre>${err.stack}</pre>
-				</div>
-			`;
-			html = html.replace('{{details}}', details);
+			html = html.replace('{{details}}', `<div class="error-details"><strong>Error Details:</strong><pre>${err.stack}</pre></div>`);
 		} else {
 			html = html.replace('{{details}}', '');
 		}

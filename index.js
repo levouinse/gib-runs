@@ -14,12 +14,9 @@ var fs = require('fs'),
 	chokidar = require('chokidar'),
 	chalk = require('chalk');
 
-// Load environment variables from .env file
 try {
 	require('dotenv').config({ path: path.join(process.cwd(), '.env') });
-} catch (e) {
-	// dotenv not available, skip
-}
+} catch (e) {}
 
 var INJECTED_CODE = fs.readFileSync(path.join(__dirname, "injected.html"), "utf8");
 var packageJson = require('./package.json');

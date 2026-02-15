@@ -1,7 +1,7 @@
 {
   "name": "gib-runs",
-  "version": "2.3.7",
-  "description": "Modern development server with live reload, hot module replacement, and advanced features for all project types - runs on merit, not nepotism",
+  "version": "2.3.8",
+  "description": "Modern development server with live reload, hot module replacement, and advanced features - runs on merit, not nepotism",
   "keywords": [
     "development",
     "server",

@@ -1,117 +1,58 @@
+# 🚀 GIB-RUNS
+
 [![npm version](https://img.shields.io/npm/v/gib-runs.svg)](https://www.npmjs.org/package/gib-runs)
 [![npm downloads](https://img.shields.io/npm/dm/gib-runs.svg)](https://www.npmjs.org/package/gib-runs)
 [![license](https://img.shields.io/npm/l/gib-runs.svg)](https://github.com/levouinse/gib-runs/blob/main/LICENSE)
-[![tests](https://img.shields.io/badge/tests-32%20passing-brightgreen.svg)](https://github.com/levouinse/gib-runs)
 
-# 🚀 GIB-RUNS v2.3.7
+Modern development server with live reload and hot module replacement. Built for developers who value merit over connections.
 
-**Modern development server with live reload - Unlike some people, this actually runs on merit, not connections.**
+> *"Unlike some people, this actually runs on capability, not nepotism."*
 
-> *"GIB-RUNS: Because your development server shouldn't need a family dynasty to work properly."*
+## Why GIB-RUNS?
 
-Inspired by the need for something that actually **runs** based on capability, not nepotism. This development server proves that with the right features and hard work, you don't need a famous last name to be successful.
+The name playfully references Indonesia's Vice President Gibran Rakabuming Raka, who got his position thanks to his father, President Joko Widodo. But unlike certain political figures, this server:
 
-> *"When your dev server has more qualifications than Indonesia's Vice President."* 🔥
+- ✅ Earned its position through actual features
+- ✅ Works hard without shortcuts
+- ✅ Serves everyone equally
+- ✅ Transparent about what it does
+- ✅ Performance based on real metrics
 
-## 🎭 Why "GIB-RUNS"?
+*"When your dev server has more integrity than some vice presidents."*
 
-The name is a playful nod to Indonesia's Vice President Gibran Rakabuming Raka, who got a head start in life thanks to his father, President Joko Widodo. But unlike certain political figures, this server:
-- ✅ Actually earned its position through features (not family connections)
-- ✅ Works hard without shortcuts (no Constitutional Court manipulation needed)
-- ✅ Doesn't rely on daddy's connections (or changing age requirements)
-- ✅ Serves everyone equally, regardless of background (true meritocracy)
-- ✅ Transparent about what it does (no hidden agendas or dynasty building)
-- ✅ Accessible to all networks (unlike political positions reserved for family)
-- ✅ Performance based on real metrics (not manufactured popularity)
+## Features
 
-*"When your development server has more integrity than some vice presidents."* 😏
-
-*"GIB-RUNS: Proving that with actual features and hard work, you don't need a presidential father to succeed."*
-
-## ✨ Features
-
-### Core Features (Earned, Not Inherited)
-- 🔄 **Live Reload** - Automatic browser refresh on file changes (works without political intervention)
-- ⚡ **Hot CSS Injection** - Update styles without full page reload (no constitutional court needed)
-- 🎨 **Beautiful UI** - Modern status indicator with real-time feedback (actually designed, not just given)
-- 📊 **Performance Monitoring** - Track requests, reloads, and uptime (transparent metrics, unlike some careers)
-- 🗜️ **Compression** - Built-in gzip compression for better performance (optimized through effort, not privilege)
-- 🔒 **HTTPS/HTTP2 Support** - Secure development with modern protocols
-- 🌐 **CORS Support** - Easy cross-origin development (serves everyone equally)
-- 🔐 **HTTP Authentication** - Protect your development server (actual security, not just family name)
+- 🔄 **Live Reload** - Automatic browser refresh on file changes
+- ⚡ **Hot CSS Injection** - Update styles without full page reload
+- 🎨 **Beautiful UI** - Modern status indicator with real-time feedback
+- 📊 **Performance Monitoring** - Track requests, reloads, and uptime
+- 🗜️ **Compression** - Built-in gzip compression
+- 🔒 **HTTPS/HTTP2** - Secure development with modern protocols
+- 🌐 **CORS Support** - Easy cross-origin development
+- 🔐 **HTTP Auth** - Protect your development server
 - 🎯 **SPA Support** - Perfect for Single Page Applications
 - 🔌 **Proxy Support** - Proxy API requests during development
-- 📦 **Middleware Support** - Extend functionality with custom middleware
+- 📦 **Middleware** - Extend functionality with custom middleware
 - 🎭 **Mount Directories** - Serve multiple directories on different routes
 - 🚀 **NPM Scripts** - Run npm dev, start, or any script alongside server
-- ⚙️ **Custom Commands** - Execute any command with live reload
 - 🔄 **PM2 Integration** - Production-ready process management
+- 🌍 **Public Tunnels** - Share your dev server with anyone, anywhere
+- 📱 **Multi-Device** - Access from any device on your network
 
-### Advanced Features (Built on Competence)
-- 🔍 **Smart File Watching** - Intelligent change detection with debouncing (actually smart, not just called smart)
-- 🎪 **Auto Reconnection** - WebSocket reconnection with exponential backoff
-- 📱 **Multi-Device Support** - Access from any device on your network (meritocracy in action)
-- 🌍 **Public Tunnels** - Share your dev server with anyone, anywhere (true accessibility)
-- 🎨 **Colored Logging** - Beautiful, informative console output
-- ⚙️ **Highly Configurable** - Extensive CLI options and config file support
-- 🚦 **Status Indicator** - Visual feedback on connection status
-- 📈 **Statistics** - Detailed metrics on shutdown (real data, not manufactured success stories)
-- 🛡️ **Security Headers** - Production-ready security (real protection, not just a famous name)
-- ⚡ **Performance Monitoring** - Track slow requests and optimize (actual performance metrics)
-- 🚦 **Rate Limiting** - Protect against abuse (better protection than family connections)
-- 🌐 **Network Access** - True network binding that actually works (unlike some political promises)
+## Installation
 
-### New in v2.3.7 🎉
-- 📁 **Project-Level Config File** - `.gib-runs.json` in project root (overrides global config)
-- 🎯 **Improved Watch Ignore** - Auto-ignore common directories (node_modules, dist, build, etc)
-- ⚡ **Enhanced File Watching** - Better stability with awaitWriteFinish option
-
-### New in v2.3.6 🎉
-- 🔄 **Environment Variable Replacement** - Automatic replacement of `${VAR_NAME}` in HTML files from .env
-- 🔁 **Auto-Restart on Crash** - Automatically restart server on unexpected errors (resilient mode)
-- 📤 **File Upload Endpoint** - Built-in file upload support for development (POST to /upload)
-- 💚 **Health Check Endpoint** - Monitor server health and statistics (GET /health)
-- 📝 **Request Logging to File** - Log all requests to file for debugging (gib-runs.log)
-- 🎨 **Custom Error Pages** - Beautiful, informative error pages with stack traces
-- 🌍 **Environment Variables** - Automatic .env file loading (dotenv support)
-- 📡 **WebSocket Broadcasting** - Send custom messages to all connected clients
-
-## 📦 Installation
-
-### Global Installation (Recommended)
 ```bash
+# Global (recommended)
 npm install -g gib-runs
-```
 
-### Local Installation
-```bash
+# Local
 npm install --save-dev gib-runs
 ```
 
-### From Source
-```bash
-git clone https://github.com/levouinse/gib-runs.git
-cd gib-runs
-npm install
-npm install -g
-```
-
-## 🚀 Quick Start
-
-Navigate to your project directory and run:
+## Quick Start
 
 ```bash
-gib-runs
-```
-
-That's it! Your project is now being served with live reload enabled.
-
-## 📖 Usage
-
-### Command Line
-
-```bash
-# Serve current directory on default port (8080)
+# Serve current directory
 gib-runs
 
 # Serve specific directory
@@ -120,20 +61,14 @@ gib-runs ./dist
 # Custom port
 gib-runs --port=3000
 
-# Open specific path in browser
-gib-runs --open=/dashboard
+# SPA mode
+gib-runs --spa
 
-# SPA mode with custom port
-gib-runs --spa --port=8000
-
-# HTTPS with custom config
+# With HTTPS
 gib-runs --https=./config/https.conf.js
-
-# Multiple options
-gib-runs dist --port=3000 --spa --cors --no-browser
 ```
 
-### CLI Options
+## CLI Options
 
 | Option | Description | Default |
 |--------|-------------|---------|
@@ -141,49 +76,133 @@ gib-runs dist --port=3000 --spa --cors --no-browser
 | `--host=ADDRESS` | Address to bind to | `0.0.0.0` |
 | `--open=PATH` | Path to open in browser | `/` |
 | `--no-browser` | Suppress browser launch | `false` |
-| `--browser=BROWSER` | Specify browser to use | System default |
 | `-q, --quiet` | Suppress logging | `false` |
 | `-V, --verbose` | Verbose logging | `false` |
 | `--watch=PATH` | Paths to watch (comma-separated) | All files |
 | `--ignore=PATH` | Paths to ignore (comma-separated) | None |
-| `--ignorePattern=RGXP` | Regex pattern to ignore | None |
 | `--no-css-inject` | Reload page on CSS change | `false` |
-| `--entry-file=PATH` | Entry file for SPA | None |
 | `--spa` | Single Page App mode | `false` |
-| `--mount=ROUTE:PATH` | Mount directory to route | None |
-| `--wait=MILLISECONDS` | Debounce reload delay | `100` |
-| `--htpasswd=PATH` | HTTP auth file | None |
 | `--cors` | Enable CORS | `false` |
 | `--https=PATH` | HTTPS config module | None |
-| `--https-module=MODULE` | Custom HTTPS module | `https` |
 | `--proxy=ROUTE:URL` | Proxy requests | None |
 | `--middleware=PATH` | Custom middleware | None |
-| `--performance` | Enable performance monitoring | `false` |
-| `--security` | Enable security headers | `false` |
-| `--rate-limit=N` | Rate limit (requests/min) | None |
-| `--qr, --qrcode` | Show QR code for mobile | `false` |
+| `--htpasswd=PATH` | HTTP auth file | None |
 | `--tunnel` | Create public tunnel | `false` |
-| `--tunnel-service=NAME` | Tunnel service (lt, cf, ngrok, etc) | `localtunnel` |
-| `--tunnel-subdomain=SUB` | Custom subdomain | None |
-| `--tunnel-authtoken=TOK` | Auth token for tunnel | None |
-| `--exec=COMMAND` | Run custom command | None |
+| `--tunnel-service=NAME` | Tunnel service (lt, cf, ngrok) | `localtunnel` |
 | `--npm-script=SCRIPT` | Run npm script (dev, start, etc) | None |
+| `--exec=COMMAND` | Run custom command | None |
 | `--pm2` | Use PM2 process manager | `false` |
-| `--pm2-name=NAME` | PM2 app name | `gib-runs-app` |
 | `--auto-restart` | Auto-restart server on crash | `false` |
 | `--enable-upload` | Enable file upload endpoint | `false` |
-| `--no-health` | Disable health check endpoint | `false` |
 | `--log-to-file` | Log requests to file | `false` |
-| `--no-error-page` | Disable custom error pages | `false` |
-| `-v, --version` | Show version | - |
-| `-h, --help` | Show help | - |
 
-### Node.js API
+## Usage Examples
+
+### Basic Server
+
+```bash
+# Serve current directory on port 8080
+gib-runs
+
+# Serve with custom port
+gib-runs --port=3000
+
+# Serve specific directory
+gib-runs ./public
+```
+
+### Single Page Applications
+
+```bash
+# SPA mode (redirects all routes to index.html)
+gib-runs --spa
+
+# With custom port
+gib-runs --spa --port=8000
+```
+
+### Proxy API Requests
+
+```bash
+# Proxy /api to backend server
+gib-runs --proxy=/api:http://localhost:3000
+
+# Multiple proxies
+gib-runs --proxy=/api:http://localhost:3000 --proxy=/auth:http://localhost:4000
+```
+
+### Mount Directories
+
+```bash
+# Mount node_modules to /components
+gib-runs --mount=/components:./node_modules
+
+# Multiple mounts
+gib-runs --mount=/static:./assets --mount=/lib:./node_modules
+```
+
+### Run with NPM Scripts
+
+```bash
+# Run npm dev script with live reload
+gib-runs --npm-script=dev
+
+# Run with PM2
+gib-runs --npm-script=dev --pm2
+
+# Run custom command
+gib-runs --exec="node server.js"
+```
+
+### Public Tunnels
+
+```bash
+# Create public URL (no signup needed)
+gib-runs --tunnel
+
+# Use Cloudflare Tunnel
+gib-runs --tunnel-service=cloudflared
+
+# Use Ngrok
+gib-runs --tunnel-service=ngrok --tunnel-authtoken=YOUR_TOKEN
+```
+
+### HTTPS Development
+
+Create `https.conf.js`:
 
 ```javascript
-const gibRun = require('gib-runs');
+const fs = require('fs');
 
-const server = gibRun.start({
+module.exports = {
+  cert: fs.readFileSync(__dirname + '/server.cert'),
+  key: fs.readFileSync(__dirname + '/server.key'),
+  passphrase: 'your-passphrase'
+};
+```
+
+Then run:
+
+```bash
+gib-runs --https=./https.conf.js
+```
+
+### HTTP Authentication
+
+```bash
+# Create htpasswd file
+htpasswd -c .htpasswd username
+
+# Use it
+gib-runs --htpasswd=.htpasswd
+```
+
+## Node.js API
+
+```javascript
+const gibRuns = require('gib-runs');
+
+const server = gibRuns.start({
   port: 8080,
   host: '0.0.0.0',
   root: './public',
@@ -191,30 +210,18 @@ const server = gibRun.start({
   file: 'index.html',
   wait: 100,
   logLevel: 2,
-  
-  // Advanced options
   compression: true,
   cors: true,
   spa: true,
-  
-  // Watch specific paths
   watch: ['./src', './public'],
-  
-  // Ignore patterns
   ignore: ['node_modules', '.git'],
-  
-  // Mount directories
   mount: [
     ['/components', './node_modules'],
     ['/assets', './static']
   ],
-  
-  // Proxy configuration
   proxy: [
     ['/api', 'http://localhost:3000']
   ],
-  
-  // Custom middleware
   middleware: [
     function(req, res, next) {
       console.log('Custom middleware');
@@ -223,13 +230,16 @@ const server = gibRun.start({
   ]
 });
 
+// Broadcast custom message to all connected clients
+gibRuns.broadcast('reload');
+
 // Shutdown programmatically
-// gibRun.shutdown();
+// gibRuns.shutdown();
 ```
 
-### Configuration File
+## Configuration File
 
-Create `~/.gib-runs.json` for global default settings:
+Create `~/.gib-runs.json` for global defaults:
 
 ```json
 {
@@ -242,496 +252,49 @@ Create `~/.gib-runs.json` for global default settings:
 }
 ```
 
-Or create `.gib-runs.json` in your project root for project-specific settings (overrides global config):
+Or `.gib-runs.json` in your project root (overrides global config):
 
 ```json
 {
   "port": 3000,
   "spa": true,
   "watch": ["src", "public"],
-  "ignore": ["*.test.js", "*.spec.js"],
-  "middleware": ["performance", "security"]
+  "ignore": ["*.test.js", "*.spec.js"]
 }
 ```
 
 **Priority**: Project config > Global config > CLI arguments > Defaults
 
-## 🔒 HTTPS Configuration
+## Advanced Features
 
-Create an HTTPS configuration module:
+### Environment Variables
 
-```javascript
-// https.conf.js
-const fs = require('fs');
-
-module.exports = {
-  cert: fs.readFileSync(__dirname + '/server.cert'),
-  key: fs.readFileSync(__dirname + '/server.key'),
-  passphrase: 'your-passphrase'
-};
-```
-
-Then run:
-```bash
-gib-runs --https=./https.conf.js
-```
-
-### HTTP/2 Support
-
-Install a custom HTTPS module like `spdy`:
+Automatically loads `.env` file from project root:
 
 ```bash
-npm install spdy
-gib-runs --https=./https.conf.js --https-module=spdy
+# .env
+API_KEY=your-secret-key
+DATABASE_URL=postgres://localhost/mydb
 ```
 
-## 🎯 Single Page Applications
-
-For SPAs (React, Vue, Angular, etc.):
-
-```bash
-# Redirect all routes to index.html
-gib-runs --spa
-
-# Or with entry file
-gib-runs --entry-file=index.html
-```
-
-### SPA Middleware Options
-
-- `spa` - Redirects all routes to `/#/route`
-- `spa-ignore-assets` - Like `spa` but ignores requests with file extensions
-
-## 🔌 Proxy Configuration
-
-Proxy API requests during development:
-
-```bash
-gib-runs --proxy=/api:http://localhost:3000
-```
-
-Multiple proxies:
-```bash
-gib-runs --proxy=/api:http://localhost:3000 --proxy=/auth:http://localhost:4000
-```
-
-## 🎨 Custom Middleware
-
-Create custom middleware:
-
-```javascript
-// middleware/custom.js
-module.exports = function(req, res, next) {
-  console.log('Request:', req.url);
-  next();
-};
-```
-
-Use it:
-```bash
-gib-runs --middleware=./middleware/custom.js
-```
-
-### Built-in Middleware
-
-**Performance Monitoring** (tracks slow requests):
-```bash
-gib-runs --performance
-```
-Unlike Gibran's career metrics, these are real performance numbers.
-
-**Security Headers** (production-ready security):
-```bash
-gib-runs --security
-```
-Real security, not just a famous last name protecting you.
-
-**Rate Limiting** (protect against abuse):
-```bash
-gib-runs --rate-limit=100  # 100 requests per minute
-```
-Better protection than family connections provide.
-
-**Combine Multiple Features**:
-```bash
-gib-runs --performance --security --rate-limit=50
-```
-
-## 📊 Status Indicator
-
-GIB-RUNS includes a beautiful status indicator that appears in the bottom-right corner of your page:
-
-- 🟢 **Green** - Live reload active
-- 🟡 **Yellow** - Reconnecting/Reloading
-- 🔴 **Red** - Disconnected
-
-The indicator shows:
-- Connection status
-- CSS update notifications
-- Reload notifications
-- Auto-reconnection attempts
-
-## 🎭 Mount Directories
-
-Serve multiple directories:
-
-```bash
-gib-runs --mount=/components:./node_modules --mount=/static:./assets
-```
-
-Access them at:
-- `http://localhost:8080/components/...`
-- `http://localhost:8080/static/...`
-
-## 🔐 HTTP Authentication
-
-Protect your development server:
-
-```bash
-# Create htpasswd file
-htpasswd -c .htpasswd username
-
-# Use it
-gib-runs --htpasswd=.htpasswd
-```
-
-## 🌐 Network Access
-
-Access your server from other devices on your network - **this actually works, unlike some political promises**:
-
-```bash
-gib-runs
-```
-
-Network URLs are **ALWAYS shown automatically** when you start the server:
-
-```
-🚀 GIB-RUNS v2.3.7
-"Unlike Gibran, this actually works through merit"
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📁 Root:       /home/user/project
-  🌐 Local:   🔗 Network:    http://127.0.0.1:8080
-  🔗 Network:    
-  🔗 Network:    http://192.168.1.100:8080
-  🔗 Network:    http://10.0.0.5:8080
-  🔄 Live Reload: Enabled (no dynasty needed)
-  📦 Compression: Enabled (earned, not inherited)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
-
-**Unlike Gibran's career path, these network URLs are accessible to everyone based on actual network connectivity, not family connections!**
-
-### Features that Actually Work:
-- ✅ **Real Network Binding** - Server binds to `0.0.0.0` by default (serves everyone equally)
-- ✅ **Auto Network Detection** - Automatically detects all network interfaces (no favoritism)
-- ✅ **Mobile Access** - Access from phones, tablets, any device (true accessibility)
-- ✅ **Team Sharing** - Share URLs with your team instantly (collaboration without nepotism)
-
-Use `--verbose` to see even more details:
-```bash
-gib-runs --verbose
-```
-
-## 🌍 Public Tunnels (Share with the World!)
-
-**Unlike political positions that are reserved for family, these tunnels are open to EVERYONE!**
-
-Create a public URL to share your local server with anyone, anywhere:
-
-```bash
-# Default (LocalTunnel - no signup needed!)
-gib-runs --tunnel
-
-# Cloudflare Tunnel (fast and reliable)
-gib-runs --tunnel-service=cloudflared
-
-# Ngrok (popular choice)
-gib-runs --tunnel-service=ngrok --tunnel-authtoken=YOUR_TOKEN
-
-# Pinggy (simple and fast)
-gib-runs --tunnel-service=pinggy
-
-# Localtonet
-gib-runs --tunnel-service=localtonet
-
-# Tunnelto (Rust-based)
-gib-runs --tunnel-service=tunnelto
-```
-
-### Supported Tunnel Services
-
-| Service | Command | Signup Required | Notes |
-|---------|---------|-----------------|-------|
-| **LocalTunnel** | `--tunnel` or `--tunnel-service=lt` | ❌ No | Default, easiest option |
-| **Cloudflare** | `--tunnel-service=cloudflared` | ❌ No | Fast, requires cloudflared binary |
-| **Ngrok** | `--tunnel-service=ngrok` | ✅ Yes | Popular, requires authtoken |
-| **Pinggy** | `--tunnel-service=pinggy` | ❌ No | Simple, uses SSH |
-| **Localtonet** | `--tunnel-service=localtonet` | ✅ Yes | Requires binary |
-| **Tunnelto** | `--tunnel-service=tunnelto` | ❌ No | Rust-based, fast |
-
-### Installation Instructions
-
-**LocalTunnel** (Default - No installation needed!):
-```bash
-# Already included! Just run:
-gib-runs --tunnel
-```
-
-**Cloudflare Tunnel**:
-```bash
-# Install cloudflared
-# Linux:
-wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
-sudo chmod +x /usr/local/bin/cloudflared
-
-# macOS:
-brew install cloudflare/cloudflare/cloudflared
-
-# Then run:
-gib-runs --tunnel-service=cloudflared
-```
-
-**Ngrok**:
-```bash
-# Install ngrok
-npm install -g ngrok
-
-# Get authtoken from https://dashboard.ngrok.com/get-started/your-authtoken
-gib-runs --tunnel-service=ngrok --tunnel-authtoken=YOUR_TOKEN
-```
-
-**Pinggy** (Uses SSH - usually pre-installed):
-```bash
-gib-runs --tunnel-service=pinggy
-```
-
-**Localtonet**:
-```bash
-# Download from https://localtonet.com/download
-# Then run:
-gib-runs --tunnel-service=localtonet
-```
-
-**Tunnelto**:
-```bash
-# Install with Cargo
-cargo install tunnelto
-
-# Then run:
-gib-runs --tunnel-service=tunnelto
-```
-
-### Example Output
-
-```
-🚀 GIB-RUNS v2.3.7
-"Unlike Gibran, this actually works through merit"
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📁 Root:       /home/user/project
-  🌐 Local:   🔗 Network:    http://127.0.0.1:8080
-  🔗 Network:    
-  🔗 Network:    http://192.168.1.100:8080
-  🔄 Live Reload: Enabled (no dynasty needed)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  🌐 Starting LocalTunnel...
-     (No signup needed - true accessibility!)
-  ✓ Tunnel active!
-  🌍 Public URL: https://random-name-123.loca.lt
-  🔑 Tunnel Password: 123.45.67.89
-     (Share this with visitors to access your site)
-  🚀 Bypass Options:
-     • Set header: bypass-tunnel-reminder: any-value
-     • Or use custom User-Agent header
-     Share this URL with anyone, anywhere!
-     💡 Unlike political positions, this is accessible to all!
-```
-
-### LocalTunnel Password & Bypass
-
-**LocalTunnel requires a password for first-time visitors from each IP address.**
-
-The password is automatically fetched and displayed when you start the tunnel. It's your **public IP address**.
-
-**Two ways to bypass the password page:**
-
-1. **Set a bypass header** (recommended for API/webhook requests):
-   ```bash
-   curl -H "bypass-tunnel-reminder: true" https://your-tunnel.loca.lt
-   ```
-
-2. **Use a custom User-Agent**:
-   ```bash
-   curl -A "MyCustomBot/1.0" https://your-tunnel.loca.lt
-   ```
-
-**For browser visitors:**
-- They'll see the password page once per IP every 7 days
-- Share the tunnel password (shown in console) with them
-- Or they can visit `https://loca.lt/mytunnelpassword` from the same network
-
-**This is TRUE accessibility - no family connections, no nepotism, just pure merit-based access!** 🔥
-
-## 🚀 NPM Scripts & Process Management
-
-**Run your development scripts with live reload - GIB-RUNS acts as a smart file watcher!**
-
-### How It Works
-
-When you use `--npm-script` or `--exec`, GIB-RUNS:
-- ✅ **Does NOT create HTTP server** on port 8080
-- ✅ **Does NOT open browser** automatically
-- ✅ **Only watches files** for live reload
-- ✅ **Lets your dev server** (Vite, Next.js, etc) handle everything
-- ✅ **No port conflicts** - clean and simple
-
-### Run NPM Scripts
-
-```bash
-# Run npm dev script (Vite, Next.js, etc)
-gib-runs --npm-script=dev
-
-# Run npm start script
-gib-runs --npm-script=start
-
-# Run any npm script
-gib-runs --npm-script=build
-```
-
-**What happens:**
-- Your npm script runs normally (e.g., Vite on port 3000)
-- GIB-RUNS watches files for changes
-- Live reload works via WebSocket
-- No duplicate servers, no conflicts
-- Clean output directly from your dev server
-
-### Run Custom Commands
-
-```bash
-# Run any command
-gib-runs --exec="node server.js"
-
-# Run complex commands
-gib-runs --exec="npm run build && npm start"
-
-# Run with environment variables
-gib-runs --exec="NODE_ENV=production node app.js"
-```
-
-### PM2 Integration
-
-**Production-ready process management - earned through features, not family connections!**
-
-```bash
-# Run with PM2
-gib-runs --npm-script=dev --pm2
-
-# Custom PM2 app name
-gib-runs --npm-script=start --pm2 --pm2-name=my-app
-
-# Run command with PM2
-gib-runs --exec="node server.js" --pm2 --pm2-name=backend
-```
-
-**PM2 Commands:**
-```bash
-# View logs
-pm2 logs gib-runs-app
-
-# Stop process
-pm2 stop gib-runs-app
-
-# Restart process
-pm2 restart gib-runs-app
-
-# Delete process
-pm2 delete gib-runs-app
-
-# View all processes
-pm2 list
-```
-
-### Example Output
-
-```
-🚀 GIB-RUNS v2.3.7
-"Unlike Gibran, this actually works through merit"
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📁 Root:       /home/user/project
-  🌐 Local:   🔗 Network:    http://127.0.0.1:8080
-  🔗 Network:    
-  🔗 Network:    http://192.168.1.100:8080
-  🔄 Live Reload: Enabled (no dynasty needed)
-  📦 Compression: Enabled (earned, not inherited)
-  📦 NPM Script: dev
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  🚀 Running npm script: dev
-     Working directory: /home/user/project
-     (Earned through merit, not inheritance)
-
-  ✓ Found script: vite
-  ✓ Process started (PID: 12345)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-[npm] VITE v5.0.0  ready in 500 ms
-[npm] ➜  Local:   http://localhost:5173/
-[npm] ➜  Network: http://192.168.1.100:5173/
-```
-
-**Unlike Gibran's career, these processes run on actual merit and capability!** 🔥
-
-## 🆕 New Features in v2.3.6
-
-### Auto-Restart on Crash
-
-**Automatically restart your server when it crashes - resilient mode for development!**
-
-```bash
-# Enable auto-restart
-gib-runs --auto-restart
-
-# With other options
-gib-runs --auto-restart --port=3000 --spa
-```
-
-**How it works:**
-- Server automatically restarts on unexpected errors
-- Attempts up to 5 restarts before giving up
-- Shows restart attempt count in console
-- Perfect for unstable development environments
-- Keeps your workflow uninterrupted
-
-**Example output:**
-```
-  ✖ Server Error: ECONNRESET
-  🔄 Auto-restarting server (attempt 1/5)...
-  ✓ Server restarted successfully
+Use in HTML with `${VAR_NAME}` syntax:
+
+```html
+<script>
+  const apiKey = '${API_KEY}';
+</script>
 ```
 
 ### File Upload Endpoint
 
-**Built-in file upload support for development - no need for separate upload server!**
-
 ```bash
-# Enable file upload endpoint
+# Enable file upload
 gib-runs --enable-upload
-
-# Files will be saved to ./uploads directory
 ```
 
-**Usage:**
-```html
-<!-- HTML Form -->
-<form action="/upload" method="POST" enctype="multipart/form-data">
-  <input type="file" name="file">
-  <button type="submit">Upload</button>
-</form>
-```
+Upload files via POST to `/upload`:
 
 ```javascript
-// JavaScript Fetch API
 const formData = new FormData();
 formData.append('file', fileInput.files[0]);
 
@@ -740,282 +303,136 @@ fetch('/upload', {
   body: formData
 })
 .then(res => res.json())
-.then(data => {
-  console.log('Uploaded:', data.file);
-  // { filename: 'file-123456789.jpg', originalname: 'photo.jpg', size: 12345, path: '/path/to/uploads/...' }
-});
+.then(data => console.log('Uploaded:', data.file));
 ```
-
-**Features:**
-- 10MB file size limit
-- Files saved to `./uploads` directory
-- Automatic directory creation
-- Unique filenames with timestamp
-- JSON response with file details
-- Error handling for invalid uploads
 
 ### Health Check Endpoint
 
-**Monitor your server health and statistics - transparency in action!**
+Access server health at `/health`:
 
 ```bash
-# Health check is enabled by default
-gib-runs
-
-# Disable if needed
-gib-runs --no-health
-```
-
-**Access health endpoint:**
-```bash
-# Via curl
 curl http://localhost:8080/health
-
-# Or in browser
-http://localhost:8080/health
 ```
 
-**Response example:**
+Response:
+
 ```json
 {
   "status": "healthy",
   "uptime": 123.45,
-  "timestamp": "2026-02-12T09:00:00.000Z",
   "server": {
     "requests": 42,
     "reloads": 5,
-    "memory": {
-      "rss": "45MB",
-      "heapUsed": "23MB",
-      "heapTotal": "35MB"
-    }
+    "memory": { "rss": "45MB", "heapUsed": "23MB" }
   },
   "system": {
     "platform": "linux",
-    "arch": "x64",
     "cpus": 8,
-    "freemem": "2048MB",
-    "totalmem": "16384MB",
-    "loadavg": [1.2, 1.5, 1.8]
+    "freemem": "2048MB"
   }
 }
 ```
 
-**Use cases:**
-- Monitor server performance
-- Debug memory leaks
-- Track request patterns
-- Integration with monitoring tools
-- Health checks for Docker containers
-
-### Request Logging to File
-
-**Log all requests to file for debugging - transparent and verifiable!**
+### Request Logging
 
 ```bash
-# Enable file logging
+# Log all requests to file
 gib-runs --log-to-file
 
-# Logs saved to gib-runs.log in project root
+# Logs saved to gib-runs.log
 ```
 
-**Log format (JSON):**
-```json
-{"timestamp":"2026-02-12T09:00:00.000Z","method":"GET","url":"/index.html","ip":"127.0.0.1","userAgent":"Mozilla/5.0...","status":200,"duration":"5ms"}
-{"timestamp":"2026-02-12T09:00:01.000Z","method":"GET","url":"/style.css","ip":"127.0.0.1","userAgent":"Mozilla/5.0...","status":200,"duration":"2ms"}
-```
+Parse logs with jq:
 
-**Features:**
-- JSON format for easy parsing
-- Includes timestamp, method, URL, IP, user-agent, status, duration
-- Automatic log rotation at 10MB
-- Old logs backed up with timestamp
-- Perfect for debugging and analytics
-
-**Parse logs with jq:**
 ```bash
 # Show all 404 errors
 cat gib-runs.log | jq 'select(.status == 404)'
 
 # Show slow requests (>100ms)
 cat gib-runs.log | jq 'select(.duration | tonumber > 100)'
-
-# Count requests by URL
-cat gib-runs.log | jq -r '.url' | sort | uniq -c
 ```
 
-### Custom Error Pages
+### Custom Middleware
 
-**Beautiful, informative error pages - unlike some political errors!**
-
-```bash
-# Custom error pages enabled by default
-gib-runs
-
-# Disable if needed
-gib-runs --no-error-page
-```
-
-**Features:**
-- Modern gradient design
-- Detailed error information
-- Shows error stack trace in development mode
-- Covers all HTTP error codes (400, 401, 403, 404, 500, etc)
-- Responsive design for mobile devices
-- "Back to Home" button
-- Professional appearance
-
-**Error codes covered:**
-- 400 Bad Request
-- 401 Unauthorized
-- 403 Forbidden
-- 404 Not Found
-- 405 Method Not Allowed
-- 500 Internal Server Error
-- 502 Bad Gateway
-- 503 Service Unavailable
-
-### Environment Variables
-
-**Automatic .env file loading - no configuration needed!**
-
-```bash
-# Just create .env file in project root
-echo "API_KEY=your-secret-key" > .env
-echo "DATABASE_URL=postgres://localhost/mydb" >> .env
-
-# Start server (automatically loads .env)
-gib-runs
-```
-
-**Access in your code:**
-```javascript
-// Node.js
-const apiKey = process.env.API_KEY;
-const dbUrl = process.env.DATABASE_URL;
-
-console.log('API Key:', apiKey);
-console.log('Database:', dbUrl);
-```
-
-**Features:**
-- Automatic loading on server start
-- No configuration needed
-- Uses dotenv package
-- Perfect for API keys, database URLs, etc
-- Keeps secrets out of version control
-
-### WebSocket Broadcasting API
-
-**Send custom messages to all connected clients - programmatic control!**
+Create `middleware/custom.js`:
 
 ```javascript
-const gibRuns = require('gib-runs');
-
-// Start server
-const server = gibRuns.start({
-  port: 8080,
-  root: './public'
-});
-
-// Broadcast custom message to all clients
-gibRuns.broadcast('custom-reload');
-
-// Trigger reload from your build script
-gibRuns.broadcast('reload');
-
-// Send custom data
-gibRuns.broadcast(JSON.stringify({ type: 'notification', message: 'Build complete!' }));
-```
-
-**Use cases:**
-- Custom build tool integration
-- Trigger reload from external scripts
-- Send notifications to browser
-- Custom live reload logic
-- Integration with CI/CD pipelines
-
-**Client-side handling:**
-```javascript
-// In your HTML/JavaScript
-const ws = new WebSocket('ws://localhost:8080');
-ws.onmessage = function(event) {
-  if (event.data === 'custom-reload') {
-    console.log('Custom reload triggered!');
-    location.reload();
-  }
+module.exports = function(req, res, next) {
+  console.log('Request:', req.url);
+  next();
 };
 ```
 
-## 🐛 Troubleshooting
+Use it:
+
+```bash
+gib-runs --middleware=./middleware/custom.js
+```
+
+## Network Access
+
+Server automatically binds to `0.0.0.0` and shows all network URLs:
+
+```
+🚀 GIB-RUNS v2.3.8
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📁 Root:       /home/user/project
+  🌐 Local:      http://127.0.0.1:8080
+  🔗 Network:    http://192.168.1.100:8080
+  🔗 Network:    http://10.0.0.5:8080
+  🔄 Live Reload: Enabled
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Access from any device on your network using the network URLs.
+
+## Tunnel Services
+
+Share your local server with anyone, anywhere:
+
+| Service | Command | Signup Required |
+|---------|---------|-----------------|
+| **LocalTunnel** | `--tunnel` | ❌ No |
+| **Cloudflare** | `--tunnel-service=cloudflared` | ❌ No |
+| **Ngrok** | `--tunnel-service=ngrok --tunnel-authtoken=TOKEN` | ✅ Yes |
+| **Pinggy** | `--tunnel-service=pinggy` | ❌ No |
+
+Example:
+
+```bash
+# Default (LocalTunnel)
+gib-runs --tunnel
+
+# Cloudflare (fast and reliable)
+gib-runs --tunnel-service=cloudflared
+```
+
+## Troubleshooting
 
 ### No reload on changes
+
 1. Check browser console for WebSocket connection
 2. Ensure files are being watched: `gib-runs --verbose`
 3. Try increasing wait time: `gib-runs --wait=500`
 
 ### Port already in use
+
 GIB-RUNS will automatically try another port. Or specify one:
+
 ```bash
 gib-runs --port=3000
 ```
 
 ### ENOSPC error (Linux)
+
 Increase file watchers limit:
+
 ```bash
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
 
-### Changes missing or outdated
-Increase debounce time:
-```bash
-gib-runs --wait=500
-```
-
-## 🎯 Use Cases
-
-### React Development
-```bash
-cd my-react-app
-gib-runs build --spa --port=3000
-```
-
-### Vue.js Development
-```bash
-cd my-vue-app
-gib-runs dist --spa --cors
-```
-
-### Static Website
-```bash
-cd my-website
-gib-runs --open=/index.html
-```
-
-### API Development with Proxy
-```bash
-gib-runs public --proxy=/api:http://localhost:3000
-```
-
-### Multi-Project Setup
-```bash
-gib-runs --mount=/app1:./project1/dist --mount=/app2:./project2/dist
-```
-
-## 📈 Performance
-
-GIB-RUNS includes several performance optimizations (all achieved through actual work, not family connections):
-
-- **Gzip Compression** - Reduces transfer size by up to 70% (real optimization, not just claims)
-- **Smart Caching** - Efficient file serving with proper cache headers
-- **Debounced Reloads** - Prevents reload spam during rapid changes
-- **Efficient File Watching** - Uses native file system events (actually efficient)
-- **Connection Pooling** - Reuses WebSocket connections
-
-> *"Unlike some political careers, these optimizations are based on actual technical merit."*
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -1025,27 +442,17 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details
 
-## 👤 Author
+## Author
 
 **sofinco**
 - GitHub: [@levouinse](https://github.com/levouinse)
 - Repository: [gib-runs](https://github.com/levouinse/gib-runs)
 
-## 🙏 Acknowledgments
-
-Built with inspiration from live-server and enhanced with modern features for today's development needs.
-
-## 📚 Related Projects
-
-- [connect](https://github.com/senchalabs/connect) - Middleware framework
-- [chokidar](https://github.com/paulmillr/chokidar) - File watching
-- [faye-websocket](https://github.com/faye/faye-websocket-node) - WebSocket support
-
-## 🔗 Links
+## Links
 
 - [npm package](https://www.npmjs.com/package/gib-runs)
 - [GitHub repository](https://github.com/levouinse/gib-runs)
